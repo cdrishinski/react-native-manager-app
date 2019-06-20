@@ -4,9 +4,13 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import firebase from 'firebase';
 import reducers from './reducers'
+import LoginForm from './components/LoginForm'
+
 
 class App extends Component {
+    //launches firebase before render
     componentWillMount() {
+        console.log("is this on?")
         var firebaseConfig = {
             apiKey: "AIzaSyAw8dnIPGTLbgZZ0778p1bueHXGz1EwpdA",
             authDomain: "manager-9f8c1.firebaseapp.com",
@@ -23,11 +27,7 @@ class App extends Component {
     render () {
         return (
             <Provider store={createStore(reducers)}>
-                <View>
-                    <Text>
-                        Hello!
-                    </Text>
-                </View>
+                <LoginForm />
             </Provider>
         )
     }
